@@ -6,14 +6,30 @@ import re
 import bcrypt
 import pandas as pd
 
+
 def get_connection():
-    return psycopg2.connect(
-        user=USER,
-        password=PASSWORD,
-        host=HOST,
-        port=PORT,
-        dbname=DBNAME
-    )
+    try:
+        if "postgres" in st.secrets: 
+            db = st.secrets["postgres"]
+            return psycopg2.connect(
+                user=db["user"],
+                password=db["password"],
+                host=db["host"],
+                port=db["port"],
+                dbname=db.get("dbname", "postgres")
+            )
+        else:
+            load_dotenv("database.env")
+            return psycopg2.connect(
+                user=os.getenv("user"),
+                password=os.getenv("password"),
+                host=os.getenv("host"),
+                port=os.getenv("port"),
+                dbname=os.getenv("dbname", "postgres")
+            )
+    except Exception as e:
+        st.error(f"❌ Database connection failed: {e}")
+        return None
 
 def hash_password(plain_password: str) -> str:
     salt = bcrypt.gensalt()
