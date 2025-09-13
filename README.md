@@ -21,11 +21,11 @@ A web application for **WeSTEM Club** to manage events (lessons, workshops, acti
 ## 📂 Project Structure
 ```
 project/
-│── main.py              # Main Streamlit application
-│── .streamlit/          # Theme configuration
-|──|── config.toml          # Theme configuration
-│── requirements.txt     # Dependencies
-│── README.md            # Documentation
+│── main.py              # Streamlit app entry point
+│── .streamlit/          # Streamlit configuration
+│ └── config.toml        # Theme and layout settings
+│── requirements.txt     # Python dependencies
+│── README.md            # Project documentation
 ```
 
 ## 🔑 Installation & Run
