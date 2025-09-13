@@ -22,7 +22,8 @@ A web application for **WeSTEM Club** to manage events (lessons, workshops, acti
 ```
 project/
 │── main.py              # Main Streamlit application
-│── config.toml          # Theme configuration
+│── .streamlit/          # Theme configuration
+|──|── config.toml          # Theme configuration
 │── requirements.txt     # Dependencies
 │── README.md            # Documentation
 ```
@@ -30,7 +31,7 @@ project/
 ## 🔑 Installation & Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/westem-app.git
+   git clone https://github.com/overthinkeeer/WeSTEM-Application.git
    cd westem-app
    ```
 
@@ -78,5 +79,5 @@ git push origin main
 
 ---
 
-👨‍💻 Author: [Your Name]  
+👨‍💻 Author: [Arsen Kenjakayev]  
 📅 Created: 2025  
